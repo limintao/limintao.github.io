@@ -172,9 +172,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-let与var的区别？"><a href="#1-let与var的区别？" class="headerlink" title="1.let与var的区别？"></a>1.let与var的区别？</h4><p>let 为 ES6 新添加申明变量的命令，它类似于 var，但是有以下不同：<br>    var 声明的变量，其作用域为该语句所在的函数内，且存在变量提升现象<br>    let 声明的变量，其作用域为该语句所在的代码块内，不存在变量提升<br>    let 不允许重复声明.</p>
+        <h4 id="1-var、let、const的区别？"><a href="#1-var、let、const的区别？" class="headerlink" title="1.var、let、const的区别？"></a>1.var、let、const的区别？</h4><p>let 为 ES6 新添加申明变量的命令，它类似于 var，但是有以下不同：<br>    var声明变量可以重复声明，而let不可以重复声明<br>    var是不受限于块级的，而let是受限于块级<br>    var会与window相映射（会挂一个属性），而let不与window相映射<br>    var可以在声明的上面访问变量，而let有暂存死区，在声明的上面访问变量会报错<br>    const声明之后必须赋值，否则会报错<br>    const定义不可变的量，改变了就会报错<br>    const和let一样不会与window相映射、支持块级作用域、在声明的上面访问变量会报错</p>
 <h4 id="2-js基础数据类型和引用类型分别是什么？-包含ES6新增"><a href="#2-js基础数据类型和引用类型分别是什么？-包含ES6新增" class="headerlink" title="2.js基础数据类型和引用类型分别是什么？(包含ES6新增)"></a>2.js基础数据类型和引用类型分别是什么？(包含ES6新增)</h4><p>1.基本数据类型（自身不可拆分的）：Undefined、Null、Boolean、Number、String、symbol<br>2.引用数据类型（对象）：Object （Array，Date，RegExp，Function）</p>
-<h4 id="3-jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。"><a href="#3-jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。" class="headerlink" title="3. jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。"></a>3. jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。</h4><p>在同源策略下;在某个服务器下的页面是无法获取到该服务器以外的数据的;Jquery中ajax 的核心是通过 XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加 script标签来调用服务器提供的 js脚本<br>
+<h4 id="3-jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。"><a href="#3-jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。" class="headerlink" title="3. jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。"></a>3. jsonp原理，jquery是怎么实现的，这样实现有什么好处和坏处。</h4><p>在同源策略下;在某个服务器下的页面是无法获取到该服务器以外的数据的;Jquery中ajax 的核心是通过 XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加 script标签来调用服务器提供的 js脚本<br>当我们正常地请求一个JSON数据的时候，服务端返回的是一串 JSON类型的数据，而我们使用 JSONP模式来请求数据的时候服务端返回的是一段可执行的 JavaScript代码。因为jsonp 跨域的原理就是用的动态加载 &lt;script&gt;的src ，所以我们只能把参数通过 url的方式传递, 所以jsonp的 type类型只能是get ！<br>
         
           <a class="article-more-a" href="/2018/05/01/interview_js/#more">more >></a>
         
@@ -392,87 +392,6 @@
 
 
   
-    <article id="post-Genymotion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/02/Genymotion/">Genymotion相关问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/02/Genymotion/" class="archive-article-date">
-  	<time datetime="2017-10-02T01:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="运行报错"><a href="#运行报错" class="headerlink" title="运行报错"></a>运行报错</h2><p>当你下载好了Genymotion的Android镜像并点了<code>start</code>后，如果你运气不好会报以下错误。😾</p>
-<pre><code>VT-x is disabled in the BIOS for both all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED)
-</code></pre><p><img src="/assets/photoAlbum/genymotion_err1.png" alt="报错一"></p>
-<p>要在64位主机上运行Oracle VM Virtual Box / VMware计算机，需要启用<code>Virtualization Technology</code>（VTx）和<code>Virtualization Technology Directed I/O</code>（VTd）。</p>
-<p>通常这些设置在BIOS级别上被禁用。</p>
-<p>要启用VTx和VTd，您必须更改BIOS中的相应设置。<br>
-        
-          <a class="article-more-a" href="/2017/10/02/Genymotion/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React-Native</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/02/Genymotion/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-RN_set_up" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -527,6 +446,87 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/02/RN_set_up/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Genymotion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/02/Genymotion/">Genymotion相关问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/02/Genymotion/" class="archive-article-date">
+  	<time datetime="2017-10-02T01:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="运行报错"><a href="#运行报错" class="headerlink" title="运行报错"></a>运行报错</h2><p>当你下载好了Genymotion的Android镜像并点了<code>start</code>后，如果你运气不好会报以下错误。😾</p>
+<pre><code>VT-x is disabled in the BIOS for both all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED)
+</code></pre><p><img src="/assets/photoAlbum/genymotion_err1.png" alt="报错一"></p>
+<p>要在64位主机上运行Oracle VM Virtual Box / VMware计算机，需要启用<code>Virtualization Technology</code>（VTx）和<code>Virtualization Technology Directed I/O</code>（VTd）。</p>
+<p>通常这些设置在BIOS级别上被禁用。</p>
+<p>要启用VTx和VTd，您必须更改BIOS中的相应设置。<br>
+        
+          <a class="article-more-a" href="/2017/10/02/Genymotion/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React-Native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/02/Genymotion/">展开全文 >></a>
         </p>
       
 
@@ -816,11 +816,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
             
             <div class="clearfix"></div>
